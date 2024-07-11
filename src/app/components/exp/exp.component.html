@@ -1,0 +1,55 @@
+<div class="row"> <!--Experiencia-->
+  <button
+    class="btn btn-primary"
+    type="button"
+    data-bs-toggle="collapse"
+    data-bs-target="#collapseExpe"
+    aria-expanded="false"
+    aria-controls="collapseExpe"
+  >
+    Experiencia
+  </button>
+
+  <div class="collapse" id="collapseExpe">
+    <div class="card card-body">
+      <div class="table-responsive">
+        <table class="table">
+          <thead class="thead bg-dark">
+            <tr class="text-white">
+              <th scope="col">#</th>
+              <th scope="col">Trabajo</th>
+              <th scope="col">Puesto</th>
+              <th scope="col">Cargo</th>
+              <th scope="col">Herramientas</th>
+              <th scope="col">Referencia</th>
+              <th scope="col" *ngIf="isLogged"></th>
+              <th scope="col" *ngIf="isLogged">Acción</th>
+            </tr>
+          </thead>
+
+          <tbody>
+            <tr *ngFor="let experiencia of experiencias">
+              <th scope="row">{{experiencia.id}}</th>
+              <td><p>{{experiencia.trabajo}}</p></td>
+              <td><p>{{experiencia.puesto}}</p></td>
+              <td><p>{{experiencia.cargo}}</p></td>
+              <td><p>{{experiencia.herramientas}}</p></td>
+              <td><p>{{experiencia.referencia}}</p></td>
+              <td *ngIf="isLogged">
+                <button class="btn btn-primary" routerLink="/editExp/{{experiencia.id}}">Edit</button>
+              </td>
+              <td *ngIf="isLogged">
+                <button class="btn btn-danger" (click)="delete(experiencia.id)">Delete</button>
+              </td>
+            </tr>
+            <div>
+              <button type="button" class="btn btn-dark bg-dark" routerLink="/nuevaExp" *ngIf="isLogged">
+                Nueva Experiencia
+              </button>
+            </div>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</div>

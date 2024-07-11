@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+
+    <meta charset="utf-8" />
+
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+  </head>
+
+  <body>
+    <main>
+      <header>
+        <app-nav></app-nav>
+      </header>
+
+      <div class="container bg-white">
+
+        <div>
+          <div class="container" *ngIf="curso">
+            <div class="row">
+              <form #f="ngForm" (ngSubmit)="onUpdate()" novalidate>
+                <div class="form-group">
+                  <label for="nombre">Nombre</label>
+                  <input
+                    type="text"
+                    class="form-control"
+                    id="Nombre"
+                    name="nombre"
+                    [(ngModel)]="curso.nombre"
+                    required
+                  />
+                </div>
+
+                <div class="form-group">
+                  <label for="carga_horaria">Carga Horaria</label>
+                  <input
+                    type="text"
+                    class="form-control"
+                    id="carga_horaria"
+                    name="carga_horaria"
+                    [(ngModel)]="curso.carga_horaria"
+                    required
+                  />
+                </div>
+
+                <div class="form-group">
+                  <label for="centro">Centro</label>
+                  <input
+                    type="text"
+                    class="form-control"
+                    id="centro"
+                    name="centro"
+                    [(ngModel)]="curso.centro"
+                    required
+                  />
+                </div>
+
+                <button class="btn btn-dark bg-dark">Actualizar</button>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <app-proyectos></app-proyectos>
+    </main>
+  </body>
+</html>

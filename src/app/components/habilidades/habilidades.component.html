@@ -1,0 +1,53 @@
+<div class="row"> <!--Habilidades-->
+    <button
+      class="btn btn-primary"
+      type="button"
+      data-bs-toggle="collapse"
+      data-bs-target="#collapseSkills"
+      aria-expanded="false"
+      aria-controls="collapseSkills"
+    >
+      Habilidades duras y blandas
+    </button>
+    
+    <div class="collapse" id="collapseSkills">
+      <div class="card card-body">
+        <h2>Habilidades Duras</h2>
+        <div class="row" *ngFor="let habilidad of habilidad">
+          <div class="col" *ngIf="habilidad.tipo === '1'">
+            <div class="progress">
+              <div class="progress-bar" role="progressbar" [ngStyle]="{ 'width': habilidad.porcentaje + '%' }" aria-valuemin="0" aria-valuemax="100">{{habilidad.porcentaje}}%</div>
+            </div>
+            <p>{{habilidad.nombre}}</p>
+          </div>
+
+          <div class="col-sm-4" *ngIf="isLogged">
+            <button class="btn btn-primary" routerLink="/habilidadEdit/{{habilidad.id}}">Edit</button>
+            <button class="btn btn-danger" (click)="deleteHabilidad(habilidad.id)">Delete</button>
+          </div>
+        </div>
+        
+        <br>
+
+        <h2>Habilidades Blandas</h2>
+        <div class="row" *ngFor="let habilidad of habilidad">
+          <div class="col" *ngIf="habilidad.tipo === '2'">
+            <div class="progress">
+              <div class="progress-bar" role="progressbar" [ngStyle]="{ 'width': habilidad.porcentaje + '%' }" aria-valuemin="0" aria-valuemax="100">{{habilidad.porcentaje}}%</div>
+            </div>
+            <p>{{habilidad.nombre}}</p>
+          </div>
+
+          <div class="col-sm-4" *ngIf="isLogged">
+            <button class="btn btn-primary" routerLink="/habilidadEdit/{{habilidad.id}}">Edit</button>
+            <button class="btn btn-danger" (click)="deleteHabilidad(habilidad.id)">Delete</button>
+          </div>
+        </div>
+        <div>
+          <button type="button" class="btn btn-dark bg-dark" routerLink="/habilidadNueva" *ngIf="isLogged">
+            Nueva habilidad
+          </button>
+        </div>
+      </div>
+    </div>
+</div> 

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+  <html lang="en">
+    <head>
+      <!-- Required meta tags -->
+
+      <meta charset="utf-8" />
+
+      <meta name="viewport" content="width=device-width,initial-scale=1" />
+    </head>
+
+    <body>
+      <main class="bg-white">
+        <header>
+          <app-nav></app-nav>
+        </header>
+
+        <div class="container">
+          <div class="row">
+
+            <div class="col">
+    
+              <form #f="ngForm" (ngSubmit)="onLogin()" novalidate class="text-center">
+    
+                <!-- Titulo -->
+                <h2><b>Iniciar Sesión</b></h2><br/>
+    
+                <!-- Campo Usuario -->
+                <div class="form-group">
+                  <input type="email" name="nombre_usuario" id="nombre_usuario" class="form-control input-lg" placeholder="Usuario" for="nombre_usuario"
+                  [(ngModel)]="nombre_usuario" required/>
+                </div>
+    
+                <!-- Campo Contraseña -->
+                <div class="form-group">
+                  <input type="password" name="password" id="password" class="form-control input-lg" for="password" placeholder="Contraseña" 
+                  [(ngModel)]="password" required/>
+                </div>
+                <br>
+                <!-- Boton Iniciar Sesion --> 
+                <button type="submit" name = "login_btn" class = "btn btn-primary btn-block btn-lg"><b>Iniciar Sesión</b></button><br/>
+    
+              </form><!-- Fin Formulario de Login-->  
+    
+            </div><!-- Fin Columna-->  
+           
+          </div><!-- Fin Fila--> 
+      
+        </div>
+      </main>
+    </body>
+  </html>

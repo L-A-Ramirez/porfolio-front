@@ -1,0 +1,53 @@
+.banner {
+    position: relative;
+    color: rgba(0, 0, 0, 0.726);
+    text-align: center;
+    height: 80px;
+  }
+  
+  .background-image {
+   /*background-image: url('../../../assets/banner.jpg');
+   /*background-color: rgb(70, 69, 69);*/
+   height: 100%;
+   background-size: cover;
+   background-position: center;
+   filter: brightness(50%);
+  }
+
+#cargo{
+    color: rgb(0, 0, 0);
+    margin-top: 50px;
+}
+
+.content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-65%, -65%);
+    width: 500px;
+  }
+
+  .typewriter-text {
+    height: 200px;
+    margin-top: 200px;
+    background-color: aliceblue;
+  }
+
+  .text {
+    display: inline-block;
+    border-right: 0.15em solid #000;
+    white-space: nowrap;
+    overflow: hidden;
+    animation: blink-caret 0.75s step-end infinite;
+    margin-top: 100px;
+  }
+
+  
+  @keyframes blink-caret {
+    from, to {
+      border-color: transparent;
+    }
+    50% {
+      border-color: rgb(52, 38, 255);
+    }
+  }

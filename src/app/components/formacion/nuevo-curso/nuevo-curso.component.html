@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+
+    <meta charset="utf-8" />
+
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+  </head>
+
+  <body>
+    <main>
+      <header>
+        <app-barra-sup></app-barra-sup>
+        <app-nav></app-nav>
+      </header>
+
+      <div class="container bg-white">
+        <!--Contenedor-->
+        <app-present-banner></app-present-banner>
+
+        <div>
+          <div class="container">
+            <div class="row">
+              <form #f="ngForm" (ngSubmit)="onCreate()" novalidate>
+                <div class="form-group">
+                  <label for="nombre">Nombre</label>
+                  <input
+                    type="text"
+                    class="form-control"
+                    id="Nombre"
+                    name="nombre"
+                    [(ngModel)]="nombre"
+                    required
+                  />
+                </div>
+
+                <div class="form-group">
+                  <label for="carga_horaria">Carga Horaria</label>
+                  <input
+                    type="text"
+                    class="form-control"
+                    id="carga_horaria"
+                    name="carga_horaria"
+                    [(ngModel)]="carga_horaria"
+                    required
+                  />
+                </div>
+
+                <div class="form-group">
+                  <label for="centro">Centro</label>
+                  <input
+                    type="text"
+                    class="form-control"
+                    id="centro"
+                    name="centro"
+                    [(ngModel)]="centro"
+                    required
+                  />
+                </div>
+
+                <button class="btn btn-dark bg-dark">Nueva Experiencia</button>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+      <app-proyectos></app-proyectos>
+    </main>
+  </body>
+</html>

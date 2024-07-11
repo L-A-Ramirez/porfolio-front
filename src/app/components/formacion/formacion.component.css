@@ -1,0 +1,12 @@
+@media (max-width: 768px) {
+    .table {
+      width: 100%;
+    }
+    .table th, .table td {
+      padding: 5px;
+      font-size: 14px;
+    }
+    .table th {
+      text-align: center;
+    }
+  }

@@ -1,0 +1,66 @@
+<div class="row"> <!--Formación-->
+    <button
+      class="btn btn-primary"
+      type="button"
+      data-bs-toggle="collapse"
+      data-bs-target="#collapseEdu"
+      aria-expanded="false"
+      aria-controls="collapseEdu"
+    >
+      Formación
+    </button>
+
+    <div class="collapse" id="collapseEdu"> <!--Secundario-->
+      <div class="card card-body">
+        <div class="row text-center"> 
+          <div class="col" *ngFor="let educacion of educacion">
+            <b>Secundaria</b>
+            <p><i>Oscar Smith</i> {{educacion.ingreso}} - {{educacion.egreso}}</p>
+          </div>
+
+          <div class="col" *ngFor="let educacion of educacion">
+            <b>Titulo</b>
+            <p>{{educacion.titulo}}</p>
+          </div>
+        </div>
+      
+        <div> <!--Cursos complementarios-->
+          <h6 class="text-center">Cursos Complementarios</h6>
+          <div class="table-responsive">
+            <table class="table">
+              <thead class="thead bg-dark">
+                <tr class="text-white">
+                  <th scope="col">#</th>
+                  <th scope="col">Curso</th>
+                  <th scope="col">Llevado a cabo en</th>
+                  <th scope="col">Con carga horaria de</th>
+                  <th scope="col" *ngIf="isLogged"></th>
+                  <th scope="col" *ngIf="isLogged">Acción</th>
+                </tr>
+              </thead>
+              <br>
+              <tbody>
+                <tr *ngFor="let curso of curso">
+                  <th scope="row">{{curso.id}}</th>
+                  <td><p>{{curso.nombre}}</p></td>
+                  <td><p>{{curso.centro}}</p></td>
+                  <td><p>{{curso.carga_horaria}}</p></td>
+                  <td *ngIf="isLogged">
+                    <button class="btn btn-primary" routerLink="/editCurso/{{curso.id}}">Edit</button>
+                  </td>
+                  <td *ngIf="isLogged">
+                    <button class="btn btn-danger" (click)="deleteCurso(curso.id)">Delete</button>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <div>
+            <button type="button" class="btn btn-dark bg-dark" routerLink="/nuevoCurso" *ngIf="isLogged">
+              Nuevo Curso
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+</div>

@@ -1,0 +1,23 @@
+<nav>
+    <div id="nav" class="container-fluid text-white"> <!--Navegación-->
+      <div class="row">
+        <div class="col">
+          <button class="btn">
+            <a href="">
+              <img id="icon-inicio" src="../../../assets/house.svg"/>
+            </a> 
+          </button>
+        </div>
+        <div class="col">
+          <a (click)="login()" *ngIf="!isLogged">
+            <img id="icon-acces" src="../assets/entrar.svg" />
+          </a>
+          <a (click)="onLogOut()" *ngIf="isLogged">
+            <img id="icon-acces" src="../assets/salir.svg" />
+          </a>
+          <a href="https://www.linkedin.com/in/ralu98/"><img id="icon-redes" src="../assets/linkedin.svg"/></a>
+          <a href="https://github.com/L-A-Ramirez"><img id="icon-redes" src="../assets/github.svg" /></a>
+        </div>
+      </div>
+    </div>
+</nav>

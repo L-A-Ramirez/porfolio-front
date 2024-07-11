@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+  <html lang="en">
+    <head>
+      <!-- Required meta tags -->
+
+      <meta charset="utf-8" />
+
+      <meta name="viewport" content="width=device-width,initial-scale=1" />
+    </head>
+
+    <body>
+      <main>
+        <header>
+          <app-nav></app-nav>
+        </header>
+
+        <div class="container bg-white">
+
+          <div>
+            <div class="container">
+                <div class="row">
+                    <form #f="ngForm" (ngSubmit)="onCreate()" novalidate>
+
+                        <div class="form-group">
+                            <label for="trabajo">Trabajo</label>
+                            <input type="text" class="form-control" id="trabajo" name="trabajo" [(ngModel)]="trabajo" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="puesto">puesto</label>
+                            <input type="text" class="form-control" id="puesto" name="puesto" [(ngModel)]="puesto" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="cargo">cargo</label>
+                            <input type="text" class="form-control" id="cargo" name="cargo" [(ngModel)]="cargo" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="herramientas">herramientas</label>
+                            <input type="text" class="form-control" id="herramientas" name="herramientas" [(ngModel)]="herramientas" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="referencia">referencia</label>
+                            <input type="text" class="form-control" id="referencia" name="referencia" [(ngModel)]="referencia" required>
+                        </div>
+
+                        <button class="btn btn-dark bg-dark">
+                            Nueva Experiencia
+                        </button>
+                    </form>
+                </div>
+            </div>
+
+          </div>
+        </div>
+
+        <app-proyectos></app-proyectos>
+      </main>
+    </body>
+  </html>

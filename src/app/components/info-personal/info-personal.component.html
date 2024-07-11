@@ -1,0 +1,27 @@
+<div>
+  <!--información personales-->
+  <br>
+  <div class="row">
+    <div class="col"><img class="circular-image" alt="Descripción de la imagen" src="'../../../../../assets/perfil4.jpg"></div>
+    <div class="col-6 text" *ngFor="let persona of personas">
+      <p *ngFor="let vistaEdad of vistaEdad">
+        <br>
+        {{persona.profesion}}
+        <br>
+        <small class="text-muted" *ngFor="let domicilio of domicilios">
+          {{domicilio.provincia}}, {{domicilio.pais}}
+        </small>
+        <br><br><br>
+        Hola soy {{persona.nombre}} {{persona.apellido}}, tengo {{vistaEdad.edad}} años,
+        {{ persona.acercademi}}
+        <button
+          *ngIf="isLogged"
+          class="btn btn-primary"
+          routerLink="/editAcerca/{{ persona.dni }}"
+        >
+          Editar
+        </button>
+      </p>
+    </div>
+  </div>
+</div>

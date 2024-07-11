@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+  <html lang="en">
+    <head>
+      <!-- Required meta tags -->
+
+      <meta charset="utf-8" />
+
+      <meta name="viewport" content="width=device-width,initial-scale=1" />
+    </head>
+
+    <body>
+      <main>
+        <header>
+       
+          <app-nav></app-nav>
+        </header>
+
+        <div class="container bg-white">
+          
+          <!--Contenedor-->
+        
+          <div>
+            <div class="container" *ngIf="info">
+                <div class="row">
+                    <form #f="ngForm" (ngSubmit)="onUpdate()" novalidate>
+                        <div class="form-group">
+                            <label for="trabajo">Acerca de mí</label>
+                            <input type="text" class="form-control" id="acercademi" name="acercademi" [(ngModel)]="info.acercademi" required>
+                        </div>
+
+                        <button class="btn btn-dark bg-dark">
+                            Actualizar
+                        </button>
+                    </form>
+                </div>
+            </div>
+
+          </div>
+        </div>
+
+        <app-proyectos></app-proyectos>
+      </main>
+    </body>
+  </html>
